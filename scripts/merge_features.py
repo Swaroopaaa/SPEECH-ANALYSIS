@@ -26,7 +26,7 @@ def merge_all_features():
 
     np.save(os.path.join(Config.RESULTS_FOLDER, "features.npy"), features)
     np.save(os.path.join(Config.RESULTS_FOLDER, "labels.npy"), labels)
-    print(f"✅ Merged features saved in {Config.RESULTS_FOLDER}")
+    print(f" Merged features saved in {Config.RESULTS_FOLDER}")
 
 if __name__ == "__main__":
     merge_all_features()
