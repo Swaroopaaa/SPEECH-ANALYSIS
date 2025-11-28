@@ -28,13 +28,13 @@ def preprocess_all(target_sr=16000):
                     sf.write(p, y, target_sr)
                     count += 1
                 else:
-                    print(f"⚠️ Empty file skipped: {p}")
+                    print(f" Empty file skipped: {p}")
 
             except Exception as e:
-                print(f"❌ Error processing {p}: {e}")
+                print(f" Error processing {p}: {e}")
                 continue
 
-    print(f"✅ Preprocessing done! Total files processed: {count}")
+    print(f" Preprocessing done! Total files processed: {count}")
 
 if __name__ == "__main__":
     preprocess_all()
