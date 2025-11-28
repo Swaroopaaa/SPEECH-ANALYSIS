@@ -13,7 +13,7 @@ class HuBERTExtractor:
         )
         self.model = HubertModel.from_pretrained("facebook/hubert-base-ls960")
         self.model.eval()
-        print("✅ HuBERT model loaded successfully!")
+        print(" HuBERT model loaded successfully!")
 
     def extract_features(self, audio_path):
         print(f"🎧 Extracting features from: {audio_path}")
