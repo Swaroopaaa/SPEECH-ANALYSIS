@@ -16,24 +16,24 @@ class HuBERTExtractor:
         print(" HuBERT model loaded successfully!")
 
     def extract_features(self, audio_path):
-        print(f"🎧 Extracting features from: {audio_path}")
+        print(f" Extracting features from: {audio_path}")
 
-        # 🔸 Load the audio file using soundfile (no backend issues)
+
         data, sr = sf.read(audio_path)
 
-        # 🔸 Convert stereo to mono if necessary
+
         if data.ndim > 1:
             data = np.mean(data, axis=1)
 
-        # 🔸 Resample to 16 kHz if needed
+        
         if sr != 16000:
             data = librosa.resample(data, orig_sr=sr, target_sr=16000)
             sr = 16000
 
-        # 🔸 Convert to tensor
+        
         waveform = torch.tensor(data).unsqueeze(0)
 
-        # 🔸 Extract HuBERT features
+
         inputs = self.feature_extractor(
             waveform.squeeze().numpy(),
             sampling_rate=sr,
@@ -43,7 +43,7 @@ class HuBERTExtractor:
         with torch.no_grad():
             outputs = self.model(**inputs)
 
-        # 🔸 Mean-pooling for utterance-level embedding
+        
         embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
 
         return embeddings
