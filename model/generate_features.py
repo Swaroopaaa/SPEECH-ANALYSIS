@@ -34,7 +34,7 @@ def extract_features_from_file(wav_path):
         feat_mean = torch.mean(features, dim=1).cpu().numpy().squeeze()
         return feat_mean
     except Exception as e:
-        print(f"❌ Error processing {wav_path}: {e}")
+        print(f" Error processing {wav_path}: {e}")
         return None
 
 def generate_all():
@@ -51,7 +51,7 @@ def generate_all():
 
         wav_files = [f for f in os.listdir(lang_dir) if f.lower().endswith(".wav")]
         if not wav_files:
-            print(f"⚠️ No .wav files in {lang_dir}")
+            print(f" No .wav files in {lang_dir}")
             continue
 
         for fname in tqdm(wav_files, desc=f"Processing {lang}"):
@@ -60,7 +60,7 @@ def generate_all():
             if feat is not None:
                 np.save(os.path.join(lang_out, fname.replace(".wav", ".npy")), feat)
 
-    print(f"✅ Feature extraction complete!\n📂 Features saved to: {OUT_DIR}")
+    print(f" Feature extraction complete!\n Features saved to: {OUT_DIR}")
 
 if __name__ == "__main__":
     generate_all()
