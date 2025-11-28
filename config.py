@@ -14,6 +14,6 @@ class Config:
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024
     SAMPLE_RATE = 16000
 
-    # ✅ Add this
+
     HUBERT_MODEL = "facebook/hubert-base-ls960"
 
