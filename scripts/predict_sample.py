@@ -26,8 +26,8 @@ def extract_features(filepath):
 def predict_language(filepath):
     """Predict the native language for the given audio file"""
     if not os.path.exists(MODEL_PATH):
-        print(f"❌ Model not found: {MODEL_PATH}")
-        print("➡️ Run `python -m scripts.train_model` first.")
+        print(f" Model not found: {MODEL_PATH}")
+        print(" Run `python -m scripts.train_model` first.")
         return
 
     clf = joblib.load(MODEL_PATH)
@@ -42,6 +42,6 @@ if __name__ == "__main__":
 
     filepath = sys.argv[1]
     if not os.path.exists(filepath):
-        print(f"❌ File not found: {filepath}")
+        print(f" File not found: {filepath}")
     else:
         predict_language(filepath)
