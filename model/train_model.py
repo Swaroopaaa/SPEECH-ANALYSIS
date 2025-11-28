@@ -32,19 +32,19 @@ def load_data(use_hubert=True):
 
             try:
                 if use_hubert:
-                    feat = extractor.extract_features(path)   # ✅ Correct function
+                    feat = extractor.extract_features(path)   
                 else:
                     feat = extract_mfcc(path)
 
             except Exception as e:
-                print(f"⚠️ Skipping {path} because: {e}")
+                print(f" Skipping {path} because: {e}")
                 continue
 
             X.append(feat)
             y.append(lang)
 
     if len(X) == 0:
-        raise ValueError("❌ No features extracted. Check audio files / format.")
+        raise ValueError(" No features extracted. Check audio files / format.")
 
     X = np.stack(X)
     return X, y
@@ -54,7 +54,7 @@ def train(use_hubert=True):
     print("🔹 Loading dataset...")
     X, y = load_data(use_hubert=use_hubert)
 
-    print(f"✅ Loaded {len(X)} samples.")
+    print(f" Loaded {len(X)} samples.")
 
     le = LabelEncoder()
     y_enc = le.fit_transform(y)
@@ -70,14 +70,14 @@ def train(use_hubert=True):
     print("🔹 Evaluating...")
     y_pred = clf.predict(X_val)
     acc = accuracy_score(y_val, y_pred)
-    print(f"✅ Validation Accuracy: {acc:.4f}")
+    print(f" Validation Accuracy: {acc:.4f}")
     print(classification_report(y_val, y_pred, target_names=le.classes_))
 
     joblib.dump(clf, os.path.join(MODEL_DIR, "classifier.pkl"))
     joblib.dump(le, os.path.join(MODEL_DIR, "label_encoder.pkl"))
 
-    print(f"💾 Saved classifier & label encoder to: {MODEL_DIR}")
+    print(f" Saved classifier & label encoder to: {MODEL_DIR}")
 
 
 if __name__ == "__main__":
-    train(use_hubert=True)  # default: use HuBERT
+    train(use_hubert=True)  
