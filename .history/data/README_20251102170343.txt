@@ -1,0 +1,10 @@
+Place dataset files here or run:
+python scripts/download_dataset.py
+
+Directory structure:
+data/
+  hindi/
+  tamil/
+  telugu/
+  malayalam/
+  kannada/

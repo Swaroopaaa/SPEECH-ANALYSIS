@@ -1,0 +1,26 @@
+# Virtual environment
+venv/
+
+# Audio uploads
+webapp/static/uploads/
+
+# Audio files
+*.wav
+*.mp3
+*.flac
+*.ogg
+
+# Large models
+*.pt
+*.pkl
+*.bin
+models/
+
+# Output folders
+results/
+output/
+output_images/
+
+# Cache
+__pycache__/
+

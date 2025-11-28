@@ -1,0 +1,12 @@
+flask
+torch
+torchaudio
+transformers
+librosa
+numpy
+soundfile
+scikit-learn
+joblib
+datasets
+pandas
+matplotlib

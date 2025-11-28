@@ -1,0 +1,5 @@
+webapp/static/uploads/
+*.wav
+*.mp3
+*.flac
+*.ogg

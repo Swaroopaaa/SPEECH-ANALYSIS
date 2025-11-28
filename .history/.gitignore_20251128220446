@@ -1,0 +1,22 @@
+# Ignore big models
+*.pt
+*.bin
+*.pkl
+*.pickle
+
+# Ignore datasets
+*.wav
+*.mp3
+*.flac
+dataset/
+data/
+audio/
+
+# Ignore output files
+results/
+output/
+output_images/
+
+# Ignore IDE junk
+__pycache__/
+*.log

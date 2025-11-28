@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="card result-card">
+  <h2>Analysis Result</h2>
+  <div class="result-grid">
+    <div class="box">
+      <h3>Input</h3>
+      <p>{{ audio_name }}</p>
+    </div>
+    <div class="box">
+      <h3>Detected Accent</h3>
+      <p><strong>{{ accent }}-English</strong></p>
+    </div>
+    <div class="box">
+      <h3>Confidence</h3>
+      <p>{{ confidence }}%</p>
+    </div>
+  </div>
+
+  <div class="cuisines">
+    <h3>Recommended Cuisines</h3>
+    <ul>
+      {% for c in cuisines %}
+        <li>{{ c }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="metrics">
+    <h3>Model Performance</h3>
+    <table>
+      <tr><td>MFCC Model Accuracy</td><td>{{ stats.mfcc_acc if stats.mfcc_acc is defined else stats.mfcc }}%</td></tr>
+      <tr><td>HuBERT Model Accuracy</td><td>{{ stats.hubert_acc if stats.hubert_acc is defined else stats.hubert }}%</td></tr>
+      <tr><td>Age Generalization (A → C)</td><td>{{ stats.age_acc if stats.age_acc is defined else stats.age }}%</td></tr>
+      <tr><td>Sentence-level Accuracy</td><td>{{ stats.sentence_acc if stats.sentence_acc is defined else stats.sentence }}%</td></tr>
+      <tr><td>Word-level Accuracy</td><td>{{ stats.word_acc if stats.word_acc is defined else stats.word }}%</td></tr>
+    </table>
+  </div>
+
+  <div class="controls">
+    <a href="{{ url_for('main.index') }}" class="link">← Analyze another audio</a>
+  </div>
+  {% if error %}
+  <div class="error">Note: an error occurred internally: {{ error }}</div>
+  {% endif %}
+</section>
+{% endblock %}
