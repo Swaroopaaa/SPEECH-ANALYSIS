@@ -29,11 +29,11 @@ def download_dataset(limit_per_lang=5):
                     with open(dest_path, "wb") as f:
                         f.write(response.content)
                 else:
-                    print(f"⚠️ Skipped: {file_url} not found.")
+                    print(f"Skipped: {file_url} not found.")
             except Exception as e:
-                print(f"⚠️ Error downloading {file_url}: {e}")
+                print(f" Error downloading {file_url}: {e}")
 
-    print("\n✅ Dataset downloaded successfully to:", Config.DATA_FOLDER)
+    print("\n Dataset downloaded successfully to:", Config.DATA_FOLDER)
 
 if __name__ == "__main__":
     download_dataset()
