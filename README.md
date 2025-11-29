@@ -20,9 +20,14 @@ The system includes:
 - Flask web app for audio upload & prediction  
 - Full documentation + notebooks  
 
+# Native Language Identification
+
+This project identifies the speaker's native language/accent using MFCC features and HuBERT embeddings. The repository includes complete training scripts, preprocessing pipeline, evaluation tools, and a Flask-based web interface.
+
 ---
 
-##  2. Folder Structure
+## Project Directory Structure
+
 NativeLanguageIdentification/
 │
 ├── Include/
@@ -33,33 +38,33 @@ NativeLanguageIdentification/
 │
 ├── models/
 │   ├── __init__.py
-│   ├── classifier.pkl
-│   ├── evaluate_model.py
-│   ├── feature_extractor.py
-│   ├── generate_features.py
-│   ├── hubert_model.py
-│   ├── label_encoder.pkl
-│   └── train_model.py
+│   ├── classifier.pkl                # Trained MFCC/HuBERT classifier
+│   ├── evaluate_model.py             # Evaluation and accuracy metrics
+│   ├── feature_extractor.py          # MFCC + HuBERT feature extraction
+│   ├── generate_features.py          # Converts audio → feature vectors
+│   ├── hubert_model.py               # HuBERT embedding model wrapper
+│   ├── label_encoder.pkl             # Label mapping file
+│   └── train_model.py                # Complete training pipeline
 │
 ├── results/
-│   ├── classifier.pkl
-│   ├── language_model.pkl
-│   ├── metrics.json
-│   ├── confusion_matrix.png
-│   └── sample_outputs/
+│   ├── classifier.pkl                # Final model for web app
+│   ├── language_model.pkl            # MFCC model file
+│   ├── metrics.json                  # Accuracy, layer analysis
+│   ├── confusion_matrix.png          # Visualization of model performance
+│   └── sample_outputs/               # Saved predictions or reports
 │
 ├── scripts/
-│   ├── __pycache__/
-│   ├── download_dataset.py
-│   ├── generate_features.py
-│   ├── merge_features.py
-│   ├── predict_sample.py
-│   ├── preprocess_audio.py
-│   └── train_model.py
+│   ├── __pycache__/                  # Python cache files
+│   ├── download_dataset.py           # Downloads speech dataset
+│   ├── generate_features.py          # Feature extraction script
+│   ├── merge_features.py             # Merges MFCC/HuBERT features
+│   ├── predict_sample.py             # Predicts accent for audio file
+│   ├── preprocess_audio.py           # Audio cleaning and normalization
+│   └── train_model.py                # Model training entry script
 │
 ├── webapp/
 │   ├── routes/
-│   │   └── main_routes.py
+│   │   └── main_routes.py            # Flask routing logic
 │   │
 │   ├── static/
 │   │   ├── css/
@@ -68,22 +73,24 @@ NativeLanguageIdentification/
 │   │   │   ├── image.png
 │   │   │   └── mic.svg
 │   │   └── js/
-│   │       └── record.js
+│   │       └── record.js             # Mic recording script
 │   │
-│   ├── uploads/
+│   ├── uploads/                      # User audio files
+│   │
 │   └── templates/
-│       ├── index.html
-│       ├── layout.html
-│       └── result.html
+│       ├── index.html                # Home page (record/upload)
+│       ├── layout.html               # Base HTML structure
+│       └── result.html               # Prediction output page
 │
-├── data/
-├── docs/
+├── data/                             # Downloaded datasets, processed audio
+├── docs/                             # Documentation files
 │
-├── app.py
-├── config.py
+├── app.py                            # Flask application entry point
+├── config.py                         # App configuration
 ├── .gitignore
 ├── README.md
 └── requirements.txt
+
 
 ##  3. Completed Tasks
 
