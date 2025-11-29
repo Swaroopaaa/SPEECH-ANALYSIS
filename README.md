@@ -1,34 +1,28 @@
-#TEAM - SPARKMATES
 
-# NativeLanguageIdentification - SPEECH-ANALYSIS 
-NLP Mini Project || MFCC + HuBERT || Accent Classification System
+# Native Language Identification – SPEECH-ANALYSIS  
+### NLP Mini Project | MFCC + HuBERT | Accent Classification System  
+### TEAM – SPARKMATES
 
-#1. Project Overview
+---
 
-This project implements a complete system for native language (accent) identification from speech using two approaches:
+##  1. Project Overview
 
-*MFCC-based acoustic model
+This project implements a complete system for **Native Language (Accent) Identification** from speech using:
 
-*HuBERT-embedding-based deep learning model
+- **MFCC-based acoustic model**
+- **HuBERT-embedding-based deep learning model**
 
-The system classifies accents from short words or full sentences and includes:
+The system includes:
+- Adult + Child speech dataset  
+- Word-level & Sentence-level accent detection  
+- Transformer layer analysis  
+- Age generalization (Adult → Child)
+- Flask web app for audio upload & prediction  
+- Full documentation + notebooks  
 
-*Adult + child speech dataset
+---
 
-*Age generalization study
-
-*Word-level vs Sentence-level detection experiments
-
-*Layer-wise HuBERT transformer analysis
-
-*Accent-aware cuisine recommendation demo
-
-*A simple Flask web application for testing audio files
-
-This repository includes code, documentation, models, and notebooks.
-
-#2. Folder Structure
-
+##  2. Folder Structure
 NativeLanguageIdentification/
 │
 ├── Include/
@@ -38,235 +32,181 @@ NativeLanguageIdentification/
 ├── pyvenv.cfg
 │
 ├── models/
-│   ├── __init__.py
-│   ├── classifier.pkl                # Trained MFCC/HuBERT classifier
-│   ├── evaluate_model.py             # Evaluation and accuracy metrics
-│   ├── feature_extractor.py          # MFCC + HuBERT feature extraction
-│   ├── generate_features.py          # Converts audio → feature vectors
-│   ├── hubert_model.py               # HuBERT embedding model wrapper
-│   ├── label_encoder.pkl             # Label mapping file
-│   └── train_model.py                # Complete training pipeline
-│
-|
+│ ├── init.py
+│ ├── classifier.pkl
+│ ├── evaluate_model.py
+│ ├── feature_extractor.py
+│ ├── generate_features.py
+│ ├── hubert_model.py
+│ ├── label_encoder.pkl
+│ └── train_model.py
 │
 ├── results/
-│   ├── classifier.pkl                # Final model for web app
-│   ├── language_model.pkl            # MFCC model file
-│   ├── metrics.json                  # Accuracy, layer analysis, A→C generalization
-│   ├── confusion_matrix.png          # Visualization of model performance
-│   └── sample_outputs/               # Any saved predictions or reports
+│ ├── classifier.pkl
+│ ├── language_model.pkl
+│ ├── metrics.json
+│ ├── confusion_matrix.png
+│ └── sample_outputs/
 │
 ├── scripts/
-│   ├── __pycache__/                  # Auto-generated Python cache
-│   │
-│   ├── download_dataset.py           # Downloads the speech dataset
-│   ├── generate_features.py          # Feature extraction script
-│   ├── merge_features.py             # Merges all feature files
-│   ├── predict_sample.py             # Predicts accent for a single audio file
-│   ├── preprocess_audio.py           # Audio cleaning & normalization
-│   └── train_model.py                # Model training entry script
+│ ├── pycache/
+│ ├── download_dataset.py
+│ ├── generate_features.py
+│ ├── merge_features.py
+│ ├── predict_sample.py
+│ ├── preprocess_audio.py
+│ └── train_model.py
 │
 ├── webapp/
-│   ├── routes/
-│   │    └── main_routes.py           # Flask routing logic
-│   │
-│   ├── static/
-│   │    ├── css/
-│   │    │    └── style.css
-│   │    ├── img/
-│   │    │    ├── image.png
-│   │    │    └── mic.svg
-│   │    └── js/
-│   │         └── record.js           # Browser mic recording script
-│   │
-│   ├── uploads/
-│   │    └── User audio files
-│   │
-│   └── templates/
-│        ├── index.html               # Home page (record / upload)
-│        ├── layout.html              # Base HTML structure
-│        └── result.html              # Accent prediction output
+│ ├── routes/
+│ │ └── main_routes.py
+│ │
+│ ├── static/
+│ │ ├── css/style.css
+│ │ ├── img/
+│ │ │ ├── image.png
+│ │ │ └── mic.svg
+│ │ └── js/record.js
+│ │
+│ ├── uploads/
+│ │
+│ └── templates/
+│ ├── index.html
+│ ├── layout.html
+│ └── result.html
 │
 ├── data/
-│   └── (Downloaded datasets, processed audio)
-│
 ├── docs/
-│   └── Project documentation files
 │
-├── app.py                             # Flask application entry point
-├── config.py                          # App configuration and folder paths
+├── app.py
+├── config.py
 ├── .gitignore
 ├── README.md
-├── requirements.txt
+└── requirements.txt
 
 
-#3. Completed Tasks 
-#3.1 Dataset Preprocessing
+---
 
-Explore: Cleaned, normalized, and organized both adult and child speech samples.
-Includes silence removal, resampling, metadata mapping, and label encoding.
+##  3. Completed Tasks
 
-#3.2 MFCC-based Accent Classification Model
+###  3.1 Dataset Preprocessing  
+- Cleaned, normalized, resampled audio  
+- Silence removal  
+- Metadata mapping  
+- Label encoding  
 
-Explore: Built a traditional ML model using MFCC features (20–40 coefficients) with SVM/RandomForest for baseline accent identification.
+###  3.2 MFCC-Based Model  
+- Extracted 20–40 MFCC  
+- Trained SVM/RandomForest classifier  
 
-#3.3 HuBERT-based Embedding Model
+###  3.3 HuBERT-Based Model  
+- Extracted HuBERT Base embeddings  
+- Layer-wise embedding comparison  
+- High accuracy & robustness  
 
-Explore: Extracted deep speech embeddings using HuBERT Base and trained a classifier for accent prediction with higher robustness.
+###  3.4 Layer-wise Transformer Analysis  
+- Studied which HuBERT layers capture accent cues  
 
-#3.4 Layer-wise Transformer Analysis
+###  3.5 Word-Level Accent Detection  
+- Word segmentation  
+- Per-word prediction  
 
-Explore: Inspected transformer layers to understand which layers capture accent cues versus phonetic/semantic information.
+###  3.6 Sentence-Level Accent Detection  
+- Full-sentence embeddings  
+- Stable prediction  
 
-#3.5 Word-level Accent Detection
+###  3.7 Age Generalization  
+- Adult-trained → Child speech evaluation  
 
-Explore: Split audio into words, extracted embeddings, and predicted the accent of each word-level segment.
+###  3.8 Flask Web App  
+- Audio upload  
+- MFCC + HuBERT prediction  
+- Waveform & spectrogram  
 
-#3.6 Sentence-level Accent Detection
+###  3.9 Documentation  
+- Preprocessing notebook  
+- Training notebook  
+- Evaluation notebook  
 
-Explore: Performed full-sentence inference for accent classification using average-pooled HuBERT embeddings.
+---
 
-#3.7 Age-Generalization (Adult → Child)
+## ⚙️ 4. Installation
 
-Explore: Evaluated how an accent model trained on adult speech performs on child speech, observing generalization gaps.
-
-#3.8 Flask Web Application
-
-Explore: Built a complete UI + backend:
-
-Upload audio
-
-Run MFCC/HuBERT model
-
-Show predictions with confidence
-
-Visualize waveform, spectrogram, and embeddings
-
-#3.9 Complete Documentation & Notebooks
-
-Explore: Added clean Jupyter notebooks for:
-
-Preprocessing
-
-Feature extraction
-
-Model training
-
-Evaluation
-
-Visualization
-
-Also created full documentation including README and file structure.
-
-
-#4. Installation
-Step 1 — Clone the repository
+### Step 1 — Clone the Repository  
+```bash
 git clone https://github.com/Swaroopaaa/SPEECH-ANALYSIS.git
 cd SPEECH-ANALYSIS
 
-Step 2 — Create virtual environment
+Step 2 — Create Virtual Environment
 python -m venv venv
-venv\Scripts\activate   # Windows
+venv\Scripts\activate      # Windows
 # or
-source venv/bin/activate   # Linux / Mac
+source venv/bin/activate   # Linux/Mac
 
-Step 3 — Install dependencies
-pip install -r requirements.txt  
+Step 3 — Install Requirements
+pip install -r requirements.txt
 
-#5. How to Run the Application (Explore)
-#5.1 Ensure Required Files Are Present
+ 5. How to Run the Application
+5.1 Required Files
 
-Before running the app, confirm that the following files exist:
+Ensure the following files exist:
 
-model/classifier.pkl – MFCC or HuBERT classifier
+models/classifier.pkl
 
-model/language_model.pkl – Language model for embeddings
+models/language_model.pkl
 
-scripts/metrics.json – Evaluation metrics for reference
+results/metrics.json
 
-#5.2 Run the Flask App
-
-Execute the Flask application from the project root directory:
-
+5.2 Run the Flask App
 python app.py
 
-#5.3 Open in Browser
-
-Once the server is running, access the application at:
-
+5.3 Open Browser
 http://127.0.0.1:5000/
 
-#5.4 Upload Audio for Accent Prediction
-
-Upload a .wav or supported audio file through the web interface
-
-View predicted accent, confidence scores, and optional visualizations such as waveform and spectrogram
-
-#6. Output Description (Explore)
-
-The application provides the following outputs:
-
-| **Output**                         | **Description**                                                                                     |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Predicted Accent / Native Language | Shows the predicted accent or native language for the uploaded audio.                               |
-| Confidence Score                   | Displays the model’s confidence in its prediction (0–100%).                                         |
-| Model Used                         | Indicates whether the prediction was made using MFCC or HuBERT.                                     |
-| Side-by-Side Comparison            | If both MFCC and HuBERT models are available, shows predictions and confidence scores side by side. |
-
-
-
-| **Metric**               | **Description**                                                  |
-| ------------------------ | ---------------------------------------------------------------- |
-| MFCC Model Accuracy      | Overall accuracy of the MFCC-based classifier on test data.      |
-| HuBERT Model Accuracy    | Overall accuracy of the HuBERT-based model on test data.         |
-| Word-level Accuracy      | Accuracy of accent detection at the word level.                  |
-| Sentence-level Accuracy  | Accuracy of accent detection at the sentence level.              |
-| Age-Generalization Score | Performance of adult-trained models when tested on child speech. |
-
-
-#8. How to Cite This Work
-
-If you use this project, please cite it as:
-
+ 6. Output Description
+ Prediction Outputs
+Output	Description
+Predicted Accent	Accent/native language
+Confidence Score	Model confidence
+Model Used	MFCC or HuBERT
+Comparison	Both model outputs (if available)
+✔ Performance Metrics
+Metric	Meaning
+MFCC Accuracy	Baseline model accuracy
+HuBERT Accuracy	Deep model performance
+Word-Level Accuracy	Word-segment predictions
+Sentence-Level Accuracy	Full-utterance predictions
+Age-Generalization	Adult → Child accuracy
+ 8. How to Cite
 SPARKMATES (2025). Native Language Identification — SPEECH-ANALYSIS.
-GitHub Repository: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
+GitHub: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
 
-For the HuBERT model, cite:
+
+HuBERT:
 
 Hsu, W.-N. et al. (2021). HuBERT: Self-Supervised Speech Representation Learning.
-Meta AI Research
+Meta AI Research.
 
-#9. Explore
+9. Explore
 
-This project allows you to explore the following aspects of accent and language identification:
+Accent patterns across age groups
 
-#Accent Patterns Across Age Groups
-Analyze differences in accent between adult and child speech.
+MFCC vs HuBERT comparison
 
-#MFCC vs Embedding-Based Models
-Compare traditional MFCC-based classifiers with HuBERT embedding-based models.
+Word vs Sentence accent cues
 
-#Transformer Layer-Level Contributions
-Investigate which transformer layers capture accent-specific information.
+Transformer layer-level analysis
 
-#Word-Level vs Sentence-Level Accent Cues
-Study short-segment (word-level) versus long-utterance (sentence-level) accent patterns.
+Real-world accent-based applications
 
-#Age Transfer and Generalization
-Explore how models trained on adult speech generalize to child speech.
+End-to-end web interface
 
-#Practical Accent-Based Applications
-Consider real-world scenarios where accent detection can inform recommendations.
-
-#End-to-End Web Interface
-Upload audio and get predictions with visualizations through the Flask application.
-
-#10. Team Members
+ 10. Team Members
 
 Bolisetti Jyothi Swarupa
 
 Pydikodanala Devi
 
-#11. Project Repository
+🔗 11. Project Repository
 
 GitHub: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
