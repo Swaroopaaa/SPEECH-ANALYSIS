@@ -28,9 +28,71 @@ This project identifies the speaker's native language/accent using MFCC features
 
 ## Project Directory Structure
 
+<pre>
+NativeLanguageIdentification/
+│
+├── Include/
+├── Lib/
+├── Scripts/
+├── share/
+├── pyvenv.cfg
+│
+├── models/
+│   ├── __init__.py
+│   ├── classifier.pkl                # Trained MFCC/HuBERT classifier
+│   ├── evaluate_model.py             # Evaluation and accuracy metrics
+│   ├── feature_extractor.py          # MFCC + HuBERT feature extraction
+│   ├── generate_features.py          # Converts audio → feature vectors
+│   ├── hubert_model.py               # HuBERT embedding model wrapper
+│   ├── label_encoder.pkl             # Label mapping file
+│   └── train_model.py                # Complete training pipeline
+│
+├── results/
+│   ├── classifier.pkl                # Final model for web app
+│   ├── language_model.pkl            # MFCC model file
+│   ├── metrics.json                  # Accuracy, layer analysis
+│   ├── confusion_matrix.png          # Visualization of model performance
+│   └── sample_outputs/               # Saved predictions or reports
+│
+├── scripts/
+│   ├── __pycache__/                  # Python cache files
+│   ├── download_dataset.py           # Downloads speech dataset
+│   ├── generate_features.py          # Feature extraction script
+│   ├── merge_features.py             # Merges MFCC/HuBERT features
+│   ├── predict_sample.py             # Predicts accent for audio file
+│   ├── preprocess_audio.py           # Audio cleaning and normalization
+│   └── train_model.py                # Model training entry script
+│
+├── webapp/
+│   ├── routes/
+│   │   └── main_routes.py            # Flask routing logic
+│   │
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   ├── img/
+│   │   │   ├── image.png
+│   │   │   └── mic.svg
+│   │   └── js/
+│   │       └── record.js             # Mic recording script
+│   │
+│   ├── uploads/                      # User audio files
+│   │
+│   └── templates/
+│       ├── index.html                # Home page (record/upload)
+│       ├── layout.html               # Base HTML structure
+│       └── result.html               # Prediction output page
+│
+├── data/                             # Downloaded datasets, processed audio
+├── docs/                             # Documentation files
+│
+├── app.py                            # Flask application entry point
+├── config.py                         # App configuration
+├── .gitignore
+├── README.md
+└── requirements.txt
 
-<pre> Team_AOT/ │ ├── code/ │ ├── app_cuisine_recommender.py │ ├── datasets.py │ ├── evaluate.py │ ├── inference_child_audio.py │ ├── layerwise_analysis.py │ ├── models.py │ ├── preprocess.py │ ├── random_split_baseline.py │ ├── train_hubert.py │ ├── train_mfcc.py │ └── word_sentence_analysis.py │ ├── models/ │ ├── best_cnn_mfcc.pth │ ├── best_hubert_clf.pth │ ├── hubert_classifier.joblib │ └── mfcc_cnn.pth │ ├── outputs/ │ ├── predictions.csv │ ├── confusion_matrix.png │ ├── classification_report.txt │ ├── layerwise_results.json │ └── mfcc_vs_hubert_results.csv │ ├── Team_AOT_project.ipynb ├── README.md └── requirements.txt </pre>
-
+</pre>
 
 
 ##  3. Completed Tasks
