@@ -144,34 +144,44 @@ NativeLanguageIdentification/
 git clone https://github.com/Swaroopaaa/SPEECH-ANALYSIS.git
 cd SPEECH-ANALYSIS
 
-###Step 2 — Create Virtual Environment
+### Step 2 — Create Virtual Environment
+<pre>
 python -m venv venv
 venv\Scripts\activate      # Windows
 # or
 source venv/bin/activate   # Linux/Mac
+</pre>
 
-###Step 3 — Install Requirements
+### Step 3 — Install Requirements
+<pre>
 pip install -r requirements.txt
+</pre>
 
 ## 5. How to Run the Application
-###5.1 Required Files
+<pre>
+### 5.1 Required Files
+</pre>
 
-Ensure the following files exist:
+#### Ensure the following files exist:
 
-models/classifier.pkl
+- models/classifier.pkl
 
-models/language_model.pkl
+- models/language_model.pkl
 
 results/metrics.json
 
-###5.2 Run the Flask App
+### 5.2 Run the Flask App
+<pre>
 python app.py
+</pre>
 
 ###5.3 Open Browser
+<pre>
 http://127.0.0.1:5000/
+</pre>
 
-##6. Output Description
-###Prediction Outputs
+## 6. Output Description
+### Prediction Outputs
 | Output           | Description                       |
 | ---------------- | --------------------------------- |
 | Predicted Accent | Accent/native language            |
@@ -179,7 +189,7 @@ http://127.0.0.1:5000/
 | Model Used       | MFCC or HuBERT                    |
 | Comparison       | Both model outputs (if available) |
 
-###Performance Metrics
+### Performance Metrics
 | Metric                  | Meaning                    |
 | ----------------------- | -------------------------- |
 | MFCC Accuracy           | Baseline model accuracy    |
@@ -188,55 +198,74 @@ http://127.0.0.1:5000/
 | Sentence-Level Accuracy | Full-utterance predictions |
 | Age-Generalization      | Adult → Child accuracy     |
 
-##8. How to Cite
-SPARKMATES (2025). Native Language Identification — SPEECH-ANALYSIS.
+## 7. Application Development – Accent-Aware Cuisine Recommendation
+
+#### A Flask web app was built where:
+
+- User uploads an audio file.
+
+- Accent detection model predicts the region.
+
+- System recommends region-specific dishes.
+
+### Example Output 
+- Detected Accent	Inferred Region	Recommended Dishes
+- Tamil–English	Tamil Nadu	Idli, Dosa, Pongal
+
+## 8. How to Cite
+- SPARKMATES (2025). Native Language Identification — SPEECH-ANALYSIS.
+<pre>
+GitHub: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
+</pre>
+
+
+### HuBERT:
+
+- Hsu, W.-N. et al. (2021). HuBERT: Self-Supervised Speech Representation Learning.
+ Meta AI Research.
+
+## 9. Explore
+### 9.1 Accent Patterns Across Age Groups
+
+- Different age groups have unique pronunciation and intonation patterns. Studying this improves accent detection accuracy.
+
+### 9.2 MFCC vs HuBERT
+
+- MFCC captures basic speech features, while HuBERT extracts deeper contextual patterns. Comparing them shows efficiency vs   accuracy trade-offs.
+
+### 9.3 Word vs Sentence Accent Cues
+
+- Word-level cues focus on pronunciation; sentence-level cues capture rhythm and stress. Both improve model performance.
+
+### 9.4 Transformer Layer Analysis
+
+- Early layers detect phonetics; deeper layers capture semantic and accent features. Layer-wise study helps understand        model behavior.
+
+### 9.5 Real-World Applications
+
+- Accent detection can enhance:
+
+- Voice assistants
+
+- Language learning tools
+
+- Regional content or cuisine recommendations
+
+- Speech-to-text for non-native speakers
+
+### 9.6 Web Interface
+
+- Allows users to record/upload audio, see accent predictions, get cuisine recommendations, and view interactive              visualizations.
+
+## 10. Team Members
+
+- Bolisetti Jyothi Swarupa
+
+= Pydikodanala Devi
+
+## 11. Project Repository
+<pre>
+
 GitHub: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
 
-
-###HuBERT:
-
-Hsu, W.-N. et al. (2021). HuBERT: Self-Supervised Speech Representation Learning.
-Meta AI Research.
-
-##9. Explore
-###9.1 Accent Patterns Across Age Groups
-
-Different age groups have unique pronunciation and intonation patterns. Studying this improves accent detection accuracy.
-
-###9.2 MFCC vs HuBERT
-
-MFCC captures basic speech features, while HuBERT extracts deeper contextual patterns. Comparing them shows efficiency vs accuracy trade-offs.
-
-###9.3 Word vs Sentence Accent Cues
-
-Word-level cues focus on pronunciation; sentence-level cues capture rhythm and stress. Both improve model performance.
-
-###9.4 Transformer Layer Analysis
-
-Early layers detect phonetics; deeper layers capture semantic and accent features. Layer-wise study helps understand model behavior.
-
-###9.5 Real-World Applications
-
-Accent detection can enhance:
-
-Voice assistants
-
-Language learning tools
-
-Regional content or cuisine recommendations
-
-Speech-to-text for non-native speakers
-
-###9.6 Web Interface
-
-Allows users to record/upload audio, see accent predictions, get cuisine recommendations, and view interactive visualizations.
-
-##10. Team Members
-
-Bolisetti Jyothi Swarupa
-
-Pydikodanala Devi
-
-##11. Project Repository
-
-GitHub: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
+</pre>
