@@ -261,7 +261,7 @@ GitHub: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
 
 - Bolisetti Jyothi Swarupa
 
-= Pydikodanala Devi
+- Pydikodanala Devi
 
 ## 11. Project Repository
 <pre>
