@@ -138,24 +138,23 @@ NativeLanguageIdentification/
 
 ---
 
-## ⚙️ 4. Installation
+##  4. Installation
 
 ### Step 1 — Clone the Repository  
-```bash
 git clone https://github.com/Swaroopaaa/SPEECH-ANALYSIS.git
 cd SPEECH-ANALYSIS
 
-Step 2 — Create Virtual Environment
+###Step 2 — Create Virtual Environment
 python -m venv venv
 venv\Scripts\activate      # Windows
 # or
 source venv/bin/activate   # Linux/Mac
 
-Step 3 — Install Requirements
+###Step 3 — Install Requirements
 pip install -r requirements.txt
 
- 5. How to Run the Application
-5.1 Required Files
+## 5. How to Run the Application
+###5.1 Required Files
 
 Ensure the following files exist:
 
@@ -165,56 +164,79 @@ models/language_model.pkl
 
 results/metrics.json
 
-5.2 Run the Flask App
+###5.2 Run the Flask App
 python app.py
 
-5.3 Open Browser
+###5.3 Open Browser
 http://127.0.0.1:5000/
 
- 6. Output Description
- Prediction Outputs
-Output	Description
-Predicted Accent	Accent/native language
-Confidence Score	Model confidence
-Model Used	MFCC or HuBERT
-Comparison	Both model outputs (if available)
-✔ Performance Metrics
-Metric	Meaning
-MFCC Accuracy	Baseline model accuracy
-HuBERT Accuracy	Deep model performance
-Word-Level Accuracy	Word-segment predictions
-Sentence-Level Accuracy	Full-utterance predictions
-Age-Generalization	Adult → Child accuracy
- 8. How to Cite
+##6. Output Description
+###Prediction Outputs
+| Output           | Description                       |
+| ---------------- | --------------------------------- |
+| Predicted Accent | Accent/native language            |
+| Confidence Score | Model confidence                  |
+| Model Used       | MFCC or HuBERT                    |
+| Comparison       | Both model outputs (if available) |
+
+###Performance Metrics
+| Metric                  | Meaning                    |
+| ----------------------- | -------------------------- |
+| MFCC Accuracy           | Baseline model accuracy    |
+| HuBERT Accuracy         | Deep model performance     |
+| Word-Level Accuracy     | Word-segment predictions   |
+| Sentence-Level Accuracy | Full-utterance predictions |
+| Age-Generalization      | Adult → Child accuracy     |
+
+##8. How to Cite
 SPARKMATES (2025). Native Language Identification — SPEECH-ANALYSIS.
 GitHub: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
 
 
-HuBERT:
+###HuBERT:
 
 Hsu, W.-N. et al. (2021). HuBERT: Self-Supervised Speech Representation Learning.
 Meta AI Research.
 
-9. Explore
+##9. Explore
+###9.1 Accent Patterns Across Age Groups
 
-Accent patterns across age groups
+Different age groups have unique pronunciation and intonation patterns. Studying this improves accent detection accuracy.
 
-MFCC vs HuBERT comparison
+###9.2 MFCC vs HuBERT
 
-Word vs Sentence accent cues
+MFCC captures basic speech features, while HuBERT extracts deeper contextual patterns. Comparing them shows efficiency vs accuracy trade-offs.
 
-Transformer layer-level analysis
+###9.3 Word vs Sentence Accent Cues
 
-Real-world accent-based applications
+Word-level cues focus on pronunciation; sentence-level cues capture rhythm and stress. Both improve model performance.
 
-End-to-end web interface
+###9.4 Transformer Layer Analysis
 
- 10. Team Members
+Early layers detect phonetics; deeper layers capture semantic and accent features. Layer-wise study helps understand model behavior.
+
+###9.5 Real-World Applications
+
+Accent detection can enhance:
+
+Voice assistants
+
+Language learning tools
+
+Regional content or cuisine recommendations
+
+Speech-to-text for non-native speakers
+
+###9.6 Web Interface
+
+Allows users to record/upload audio, see accent predictions, get cuisine recommendations, and view interactive visualizations.
+
+##10. Team Members
 
 Bolisetti Jyothi Swarupa
 
 Pydikodanala Devi
 
-🔗 11. Project Repository
+##11. Project Repository
 
 GitHub: https://github.com/Swaroopaaa/SPEECH-ANALYSIS
